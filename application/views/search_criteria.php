@@ -27,8 +27,8 @@
 					</fieldset>
 				</form>
 			</li>
-
- 		<li id="commentsTab">
+			
+ 			<li id="commentsTab">
 			 	
 			 	 <div id="commentsdiv" class="panel" style="width:410px;">
 			
@@ -147,11 +147,12 @@ function showComments() {
 }
 
 function showGlobalComments() {
+
 	//Method for loading comments from DB
 	$.getJSON("/socnav/index.php/showglobalcomments", function(data) {
 		//Clear the comments div
 		document.getElementById('commentsdiv').innerHTML = "";
-		//alert(data[0].latitude);
+
 		//create ul
 		newUl = document.createElement('ul'); newUl.className = 'accordion';
 		
@@ -173,14 +174,18 @@ function showGlobalComments() {
 			
 			//button
 			newLiButton = document.createElement('input');
-			newLiButton.type = 'submit'; newLiButton.value = 'Navigate To';
-			newLiButton.setAttribute('onclick','calculateRoute2(' + data[j].latitude + ',' + data[j].longitude + '); return false;'); // for FF
+			newLiButton.type = 'submit'; newLiButton.value = 'Navigate To Place';
+			newLiButton.setAttribute('onclick','calculateRoute2(' + data[j].latitude + ',' + data[j].longitude + '); return false;'); // for FF, Chrome
 			//newLiButton.onclick = function() {calculateRoute2(data[j].latitude, data[j].longitude); return false;}; // for IE
+			newLiDiv2Br = document.createElement('br');
+			newLiDiv2Br2 = document.createElement('br');
+			newLiDiv2.appendChild(newLiDiv2Br);
+			newLiDiv2.appendChild(newLiDiv2Br2);
+			newLiDiv2.appendChild(newLiButton);
 			
 			//attach elements to li
 			newLi.appendChild(newLiDiv);
 			newLi.appendChild(newLiDiv2);
-			newLi.appendChild(newLiButton);
 			
 			//attach li to ul
 			newUl.appendChild(newLi);

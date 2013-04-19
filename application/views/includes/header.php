@@ -54,13 +54,13 @@
   <div class="container top-bar home-border">
     <div class="attached">
       <div class="name" onclick="void(0);">
-        <span><a href="main">Soc Nav</a> <a href="#" class="toggle-nav"></a></span>
+        <span> <?php echo anchor('/main', 'SocNav');?> <a href="#" class="toggle-nav"></a></span>
       </div>
 
                 <ul class="right">  
                           <?php 
 				 echo "<li>";
-				echo anchor('search', 'Search'); 
+				echo anchor('/search', 'Search'); 
 				 echo "</li>";		
 			?>
 
@@ -84,7 +84,7 @@
 						echo "<li>";                	        		
 						echo anchor('/logout', 'Logout', array('class' => 'nice blue button'));
 						echo "</li>";
-						echo $this->session->userdata('username');
+						
                    					
        					} else {
 						echo "<li>";       					    	

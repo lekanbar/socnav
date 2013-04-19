@@ -66,44 +66,54 @@
   	<div class="row">
 	  <?php $this->load->view('search_criteria'); ?>
 	</div>
-        <div id="placesdiv" class="panel" style="width: 410px; display:none">
 
-                 
-		<h5>Place Details</h5><br />
-		<!--This table is for showing details (added by lekan)-->
-		<table id="tbldetails" style="width: 380px;border: none;">
-			<tr>
-				<td><img id="placeicon" name="placeicon" src = "" alt = "icon" /></td>
-			<tr>
-			<tr>
-				<td><label for="placename"><strong>Name:</strong></label></td>
-				<td><input id="placename" type="text" name="placename" readonly style="border:none"/></td>
-			<tr>
-			<tr>
-				<td><label for="placephone"><strong>Phone:</strong></label></td>
-				<td><input id="placephone" type="text" name="placephone" readonly style="border:none"/></td>
-			<tr>
-			<tr>
-				<td><label for="placewebsite"><strong>Website:</strong></label></td>
-				<td><input id="placewebsite" type="text" name="placewebsite" readonly style="border:none"/></td>
-			<tr>
-			<tr>
-				<td><label for="placerating"><strong>SocNav Rating:<strong></label></td>
-				<td><img id="placerating" name="placerating" src = "<?php echo base_url(); ?>images/rating0.png" alt = "icon" /></td>
-			<tr>
-			<tr>
-				<td>
-					<label for="placewebsite"><strong>Reviews:</strong></label>
-                                </td>
-			        <td>
-                               <div style="border:1px solid black;width:200px;height:100px;overflow:scroll;">
-                               <div id="comments_section">
-			       </div>
-		               </div>
-			</td>
-			<tr>
-               </table>
-               </br>
+        <div id="placesdiv" style="width: 410px; display:none">
+
+			<ul class="accordion">
+				  <li class="active">
+				    <div class="title">
+				      <h5>Place Details</h5>
+				    </div>
+				    <div class="content">
+				      <table id="tbldetails" style="width: 380px;border: none;">
+						<tr>
+							<td><img id="placeicon" name="placeicon" src = "" alt = "icon" /></td>
+						<tr>
+						<tr>
+							<td><label for="placename"><strong>Name:</strong></label></td>
+							<td><input id="placename" type="text" name="placename" readonly style="border:none"/></td>
+						<tr>
+						<tr>
+							<td><label for="placephone"><strong>Phone:</strong></label></td>
+							<td><input id="placephone" type="text" name="placephone" readonly style="border:none"/></td>
+						<tr>
+						<tr>
+							<td><label for="placewebsite"><strong>Website:</strong></label></td>
+							<td><input id="placewebsite" type="text" name="placewebsite" readonly style="border:none"/></td>
+						<tr>
+						<tr>
+							<td><label for="placerating"><strong>SocNav Rating:<strong></label></td>
+							<td><img id="placerating" name="placerating" src = "<?php echo base_url(); ?>images/rating0.png" alt = "icon" /></td>
+						<tr>
+						
+				       </table>
+				    </div>
+				  </li>
+				</ul>
+
+			<ul class="accordion">
+				  <li class="active">
+				    <div class="title">
+				      <h5>User Comments</h5>
+				    </div>
+				    <div class="content" id="comments_section2">
+			
+				    </div>
+
+ 				 </li>
+			</ul>
+
+		</br>
 
                  <form id="opiniontbldetails">
                  <fieldset>
@@ -118,49 +128,58 @@
 				</div>
                         <label for="placecomment"><strong>Please Comment:<strong></label>
 		        <textarea rows="4" cols="50" id="placecomment" type="text" name="placecomment"></textarea>
-		        <input type="submit" onclick="insertComment(); return false;" value="Post"> &nbsp
+		        <input type="submit" onclick="insertComment(); return false;" value="Post" class="expand small button"> &nbsp
                          <a href="#" data-reveal-id="pictureupload" class="expand small button">Add Picture</a>
 	                 <label id="lblmsg"></label>	
                   </fieldset>
 	          </form>
         </div>
 
- 		 <div id="peoplediv" class="panel" style="width:410px; display:none">
-			<h5>Person Details</h5><br />
-			<!--This table is for showing details (added by nick)-->
-			<table id="peopletbldetails" style="width:380px;border: none;margin-bottom:30px;">
-				<tr>
-					<td><img id="profpic" style="height: 100px; width:100px" name="profpic" src = "" alt = "icon" /></td>
+ 		 <div id="peoplediv" style="width:410px; display:none">
+			
+			<ul class="accordion">
+				  <li class="active">
+				    <div class="title">
+				      <h5>Personal Details</h5>
+				    </div>
+				    <div class="content">
+					<table id="peopletbldetails" style="width:380px;border: none;margin-bottom:30px;">
+						<tr>
+							<td><img id="profpic" style="height: 100px; width:100px" name="profpic" src = "" alt = "icon" /></td>
 
-				<tr>
-				<tr>
-					<td><label for="username"><strong>Username:</strong></label></td>
-					<td><input id="username" type="text" name="username" readonly style="border:none"/></td>
-				<tr>
-				<tr>
-					<td><label for="firstname"><strong>First Name:<strong></label></td>
-					<td><input id="firstname" type="text" name="firstname" readonly style="border:none"/></td>
-				<tr>
-				<tr>
-					<td><label for="lastname"><strong>Last Name:<strong></label></td>
-					<td><input id="lastname" type="text" name="lastname" readonly style="border:none"/></td>
-				<tr>
-				<tr>
-					<td><label for="gender"><strong>Gender:<strong></label></td>
-					<td><input id="gender" type="text" name="gender" readonly style="border:none"/></td>
-				<tr>
-				<tr>
-					<td><label for="email"><strong>Email:<strong></label></td>
-					<td><input id="email" type="text" name="email" readonly style="border:none"/></td>
-				<tr>
-				<tr>
-					<td><input type="submit" onclick="calculateRoute(); return false;" value="Navigate To"></td>
-				<tr>
+						<tr>
+						<tr>
+							<td><label for="username"><strong>Username:</strong></label></td>
+							<td><input id="username" type="text" name="username" readonly style="border:none"/></td>
+						<tr>
+						<tr>
+							<td><label for="firstname"><strong>First Name:<strong></label></td>
+							<td><input id="firstname" type="text" name="firstname" readonly style="border:none"/></td>
+						<tr>
+						<tr>
+							<td><label for="lastname"><strong>Last Name:<strong></label></td>
+							<td><input id="lastname" type="text" name="lastname" readonly style="border:none"/></td>
+						<tr>
+						<tr>
+							<td><label for="gender"><strong>Gender:<strong></label></td>
+							<td><input id="gender" type="text" name="gender" readonly style="border:none"/></td>
+						<tr>
+						<tr>
+							<td><label for="email"><strong>Email:<strong></label></td>
+							<td><input id="email" type="text" name="email" readonly style="border:none"/></td>
+						<tr>
+						<tr>
+							<td><input type="submit" onclick="calculateRoute(); return false;" value="Navigate To"></td>
+						<tr>
 				
-				<tr>
-					<td><label id="lblmsg"></label></td>
-				<tr>
-			</table>
+						<tr>
+							<td><label id="lblmsg"></label></td>
+						<tr>
+					</table>
+<				    </div>
+				  </li>
+			</ul>
+
 		 </div>
 </div>
 
@@ -170,10 +189,23 @@
   		<div id="gmap_canvas"></div>
   	</div>
   	
-  	<div class="row">	
-  		<div id="directions_panel" style="margin-top:40px;"><h5>Suggested Route:</h5></div>
+  	<div class="row">
+		<br/>
+		<h5>Suggested Route</h5><br/>
+  		<div id="directions_panel" style="margin-top:40px;">
+		
+		</div>
   	</div>
   	
+	<br/>
+
+	<div class="row">
+		<br/>
+		<h5>Posted Pictures</h5><br/>
+		<div id="imagegallery">
+			
+		</div>
+	</div>
   	
   </div>
   
@@ -200,9 +232,6 @@
 	<a class="close-reveal-modal">&#215;</a>
   </div>
   
-  <div id="placegallery">
-	
-  </div>
   
  </div>
 
@@ -396,7 +425,8 @@
 				// pass data to create each user marker
 				for(var i=0; i < userlist.length; i++) {
 
-				    createPersonMarker(userlist[i]);
+			    	createPersonMarker(userlist[i]);
+
 					nearbyUserList[i] = userlist[i];
 
 				}
@@ -734,17 +764,22 @@
 		function loadCommentsFromDB(){
 			$.getJSON("/socnav/index.php/loadcomments", {googleid: placegoogleid}, function(data) {
 				//Clear the comments div
-				document.getElementById('comments_section').innerHTML = "";
+				document.getElementById('comments_section2').innerHTML = "";
 				
 				//put comments in div
 				for(var j=0; j < data.length; j++) {
+
 					//create paragraph and add text
+
 					newParagraph = document.createElement('p');
+					newText = document.createTextNode(data[j].username + ': ' + data[j].comment);
 					newText = document.createTextNode(data[j].username + ': ' + data[j].comment);
 					newParagraph.appendChild(newText);
 					
+					
+					
 					// Append the new paragraph to the comments_section Div
-					document.getElementById('comments_section').appendChild(newParagraph);
+					document.getElementById('comments_section2').appendChild(newParagraph);
 				}
 			});
 		}
@@ -773,25 +808,40 @@
 				}
 			});
 		}
-	
+
+		
 		//Method for loading gallery from DB
 		function loadGalleryFromDB(gid){
 			$.getJSON("/socnav/index.php/loadgallery", {googleid: gid}, function(data) {
 				//Clear the comments div
-				document.getElementById('placegallery').innerHTML = "";
-				//alert('-> ' + data[0].username);
+
+				document.getElementById('imagegallery').innerHTML = "";
 				
-				//put pictures in div
+				//append default tr to table
+				newTable = document.createElement('table');
+				newTr = document.createElement('tr');
+				newTable.appendChild(newTr);
+				
+				var count = 0;
 				for(var j=0; j < data.length; j++) {
-					//create paragraph and add text
-					newParagraph = document.createElement('p');
+					if(count == 4){
+						count = 0;
+						newTr = document.createElement('tr');
+						newTable.appendChild(newTr);
+					}
+					
+					//append an image
+					newTd = document.createElement('td');
 					newImg = document.createElement('img');
 					newImg.src = '<?php echo base_url();?>uploads/places/' + gid + '/' + data[j].photourl;
-					newParagraph.appendChild(newImg);
-					
-					// Append the new paragraph to the comments_section Div
-					document.getElementById('placegallery').appendChild(newParagraph);
+					newImg.style.padding = '10px'; newImg.style.width = '100px'; newImg.style.height = '100px';
+					newTd.appendChild(newImg);
+					newTr.appendChild(newTd);
+					count++;
 				}
+				
+				//append the whole table
+				document.getElementById('imagegallery').appendChild(newTable);
 				
 				//clear
 				if(gid != ""){
@@ -801,6 +851,8 @@
 					gid = ""; gref = "";
 				}
 			});
+
+				
 		}
 		
 		// Calculates and displays the route between the user and the clicked comment -- Added by Lekan
@@ -826,3 +878,5 @@ function calculateRoute2(latitude, longitude) {
 	});
 }
 </script>
+
+

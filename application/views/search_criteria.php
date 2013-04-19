@@ -176,18 +176,6 @@ function showGlobalComments() {
 			newLiButton.type = 'submit'; newLiButton.value = 'Navigate To';
 			newLiButton.setAttribute('onclick','calculateRoute2(' + data[j].latitude + ',' + data[j].longitude + '); return false;'); // for FF
 			//newLiButton.onclick = function() {calculateRoute2(data[j].latitude, data[j].longitude); return false;}; // for IE
-			//newLiButtonText = document.createTextNode('Navigate To'); 
-			//newLiButton.appendChild(newLiButtonText);
-			//newLiButton.onclick = function() { calculateRoute2(new google.maps.LatLng(data[j].latitude, data[j].longitude)); };
-			//newLiButton.setAttribute('id', new google.maps.LatLng(data[j].latitude, data[j].longitude));
-			//newLiButton.onclick = 'calculateRoute2(data[j].latitude, data[j].longitude);';
-			//newLiButton.addEventListener("mouseup", function () {calculateRoute2(data[j].latitude, data[j].longitude)}, false);
-			/*onclick = 'clickedMarkerPosition = new google.maps.LatLng(' + data[j].latitude + ',' + data[j].longitude + '); calculateRoute(); return false;';function() {
-									clickedMarkerPosition = new google.maps.LatLng(data[j].latitude, data[j].longitude);
-									calculateRoute(); 
-									return false;
-								  };*/
-			//'clickedMarkerPosition = new google.maps.LatLng(' + data[j].latitude + ',' + data[j].longitude + '); calculateRoute(); return false;';
 			
 			//attach elements to li
 			newLi.appendChild(newLiDiv);
